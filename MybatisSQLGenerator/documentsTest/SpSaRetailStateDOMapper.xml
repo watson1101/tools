@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="{{DAOPACKAGENAME.dao.XXXXXDAO}}" >
+
+<!-- 请务必检查集合类型、数组类型以及将其它类作为属性的字段，按需修改 -->
+<!-- 另外请务必请关注{{}}和\"??\"的部分 -->
+
+  <resultMap id="BaseResultMap" type="com.suneee.scn.sale.model.dbo.SpSaRetailStateDO">
+<!-- <id column="tid" property="tid" jdbcType="VARCHAR" /> -->
+    <result column="tid" property="tid" jdbcType="VARCHAR" />
+    <result column="enterpriseid" property="enterpriseid" jdbcType="NUMERIC" />
+    <result column="billtype" property="billtype" jdbcType="NUMERIC" />
+    <result column="refundtype" property="refundtype" jdbcType="NUMERIC" />
+    <result column="regoodtype" property="regoodtype" jdbcType="NUMERIC" />
+    <result column="departmentid" property="departmentid" jdbcType="NUMERIC" />
+    <result column="customer" property="customer" jdbcType="VARCHAR" />
+    <result column="salesmanid" property="salesmanid" jdbcType="NUMERIC" />
+    <result column="salesman" property="salesman" jdbcType="VARCHAR" />
+    <result column="gatherdate" property="gatherdate" jdbcType="DATE" />
+    <result column="inputmanid" property="inputmanid" jdbcType="NUMERIC" />
+    <result column="inputmanname" property="inputmanname" jdbcType="VARCHAR" />
+    <result column="retailmoney" property="retailmoney" jdbcType="NUMERIC" />
+    <result column="bookmanid" property="bookmanid" jdbcType="NUMERIC" />
+    <result column="bookmanname" property="bookmanname" jdbcType="VARCHAR" />
+    <result column="rtgatherno" property="rtgatherno" jdbcType="NUMERIC" />
+    <result column="vipid" property="vipid" jdbcType="NUMERIC" />
+    <result column="province" property="province" jdbcType="NUMERIC" />
+    <result column="city" property="city" jdbcType="NUMERIC" />
+    <result column="region" property="region" jdbcType="NUMERIC" />
+    <result column="community" property="community" jdbcType="NUMERIC" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="wholeaddress" property="wholeaddress" jdbcType="VARCHAR" />
+    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
+    <result column="billno" property="billno" jdbcType="VARCHAR" />
+    <result column="discount" property="discount" jdbcType="NUMERIC" />
+    <result column="shippingstatus" property="shippingstatus" jdbcType="NUMERIC" />
+    <result column="billsource" property="billsource" jdbcType="VARCHAR" />
+    <result column="deliverytime" property="deliverytime" jdbcType="DATE" />
+    <result column="storeoderno" property="storeoderno" jdbcType="VARCHAR" />
+    <result column="invoicestatus" property="invoicestatus" jdbcType="NUMERIC" />
+    <result column="cashin" property="cashin" jdbcType="NUMERIC" />
+    <result column="cashout" property="cashout" jdbcType="NUMERIC" />
+    <result column="lackgoodsmoney" property="lackgoodsmoney" jdbcType="NUMERIC" />
+    <result column="refundmoney" property="refundmoney" jdbcType="NUMERIC" />
+    <result column="regoodmoney" property="regoodmoney" jdbcType="NUMERIC" />
+    <result column="retailtotalmoney" property="retailtotalmoney" jdbcType="NUMERIC" />
+    <result column="orderdiscountall" property="orderdiscountall" jdbcType="NUMERIC" />
+    <result column="costtotalmoney" property="costtotalmoney" jdbcType="NUMERIC" />
+    <result column="latticename" property="latticeName" jdbcType="VARCHAR" />
+    <result column="shiftno" property="shiftNo" jdbcType="VARCHAR" />
+    <result column="spsaretaildtlstatedo" property="spSaRetailDtlStateDO" jdbcType="{{jdbcType ?? }}" />
+    <result column="integralamount" property="integralAmount" jdbcType="NUMERIC" />
+    <result column="stallbilltype" property="stallBillType" jdbcType="NUMERIC" />
+    <result column="createdate" property="createDate" jdbcType="DATE" />
+    <result column="residence" property="residence" jdbcType="VARCHAR" />
+  </resultMap>
+
+
+  <sql id="Base_Column_List" >
+    tid, enterpriseid, billtype, refundtype, regoodtype, 
+    departmentid, customer, salesmanid, salesman, 
+    gatherdate, inputmanid, inputmanname, retailmoney, 
+    bookmanid, bookmanname, rtgatherno, vipid, 
+    province, city, region, community, 
+    address, wholeaddress, telephone, billno, 
+    discount, shippingstatus, billsource, deliverytime, 
+    storeoderno, invoicestatus, cashin, cashout, 
+    lackgoodsmoney, refundmoney, regoodmoney, retailtotalmoney, 
+    orderdiscountall, costtotalmoney, latticename, shiftno, 
+    spsaretaildtlstatedo, integralamount, stallbilltype, createdate, 
+    residence
+  </sql>
+
+  <insert id="insertSpSaRetailStateDO" parameterType="com.suneee.scn.sale.model.dbo.SpSaRetailStateDO" >
+    INSERT INTO {{?? Target table name}}
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tid != null" >
+        tid,
+      </if>
+      <if test="enterpriseid != null" >
+        enterpriseid,
+      </if>
+      <if test="billtype != null" >
+        billtype,
+      </if>
+      <if test="refundtype != null" >
+        refundtype,
+      </if>
+      <if test="regoodtype != null" >
+        regoodtype,
+      </if>
+      <if test="departmentid != null" >
+        departmentid,
+      </if>
+      <if test="customer != null" >
+        customer,
+      </if>
+      <if test="salesmanid != null" >
+        salesmanid,
+      </if>
+      <if test="salesman != null" >
+        salesman,
+      </if>
+      <if test="gatherdate != null" >
+        gatherdate,
+      </if>
+      <if test="inputmanid != null" >
+        inputmanid,
+      </if>
+      <if test="inputmanname != null" >
+        inputmanname,
+      </if>
+      <if test="retailmoney != null" >
+        retailmoney,
+      </if>
+      <if test="bookmanid != null" >
+        bookmanid,
+      </if>
+      <if test="bookmanname != null" >
+        bookmanname,
+      </if>
+      <if test="rtgatherno != null" >
+        rtgatherno,
+      </if>
+      <if test="vipid != null" >
+        vipid,
+      </if>
+      <if test="province != null" >
+        province,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="region != null" >
+        region,
+      </if>
+      <if test="community != null" >
+        community,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="wholeaddress != null" >
+        wholeaddress,
+      </if>
+      <if test="telephone != null" >
+        telephone,
+      </if>
+      <if test="billno != null" >
+        billno,
+      </if>
+      <if test="discount != null" >
+        discount,
+      </if>
+      <if test="shippingstatus != null" >
+        shippingstatus,
+      </if>
+      <if test="billsource != null" >
+        billsource,
+      </if>
+      <if test="deliverytime != null" >
+        deliverytime,
+      </if>
+      <if test="storeoderno != null" >
+        storeoderno,
+      </if>
+      <if test="invoicestatus != null" >
+        invoicestatus,
+      </if>
+      <if test="cashin != null" >
+        cashin,
+      </if>
+      <if test="cashout != null" >
+        cashout,
+      </if>
+      <if test="lackgoodsmoney != null" >
+        lackgoodsmoney,
+      </if>
+      <if test="refundmoney != null" >
+        refundmoney,
+      </if>
+      <if test="regoodmoney != null" >
+        regoodmoney,
+      </if>
+      <if test="retailtotalmoney != null" >
+        retailtotalmoney,
+      </if>
+      <if test="orderdiscountall != null" >
+        orderdiscountall,
+      </if>
+      <if test="costtotalmoney != null" >
+        costtotalmoney,
+      </if>
+      <if test="latticeName != null" >
+        latticename,
+      </if>
+      <if test="shiftNo != null" >
+        shiftno,
+      </if>
+      <if test="spSaRetailDtlStateDO != null" >
+        spsaretaildtlstatedo,
+      </if>
+      <if test="integralAmount != null" >
+        integralamount,
+      </if>
+      <if test="stallBillType != null" >
+        stallbilltype,
+      </if>
+      <if test="createDate != null" >
+        createdate,
+      </if>
+      <if test="residence != null" >
+        residence,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tid != null" >
+        #{tid, jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseid != null" >
+        #{enterpriseid, jdbcType=NUMERIC},
+      </if>
+      <if test="billtype != null" >
+        #{billtype, jdbcType=NUMERIC},
+      </if>
+      <if test="refundtype != null" >
+        #{refundtype, jdbcType=NUMERIC},
+      </if>
+      <if test="regoodtype != null" >
+        #{regoodtype, jdbcType=NUMERIC},
+      </if>
+      <if test="departmentid != null" >
+        #{departmentid, jdbcType=NUMERIC},
+      </if>
+      <if test="customer != null" >
+        #{customer, jdbcType=VARCHAR},
+      </if>
+      <if test="salesmanid != null" >
+        #{salesmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="salesman != null" >
+        #{salesman, jdbcType=VARCHAR},
+      </if>
+      <if test="gatherdate != null" >
+        #{gatherdate, jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputmanid != null" >
+        #{inputmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="inputmanname != null" >
+        #{inputmanname, jdbcType=VARCHAR},
+      </if>
+      <if test="retailmoney != null" >
+        #{retailmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="bookmanid != null" >
+        #{bookmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="bookmanname != null" >
+        #{bookmanname, jdbcType=VARCHAR},
+      </if>
+      <if test="rtgatherno != null" >
+        #{rtgatherno, jdbcType=NUMERIC},
+      </if>
+      <if test="vipid != null" >
+        #{vipid, jdbcType=NUMERIC},
+      </if>
+      <if test="province != null" >
+        #{province, jdbcType=NUMERIC},
+      </if>
+      <if test="city != null" >
+        #{city, jdbcType=NUMERIC},
+      </if>
+      <if test="region != null" >
+        #{region, jdbcType=NUMERIC},
+      </if>
+      <if test="community != null" >
+        #{community, jdbcType=NUMERIC},
+      </if>
+      <if test="address != null" >
+        #{address, jdbcType=VARCHAR},
+      </if>
+      <if test="wholeaddress != null" >
+        #{wholeaddress, jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        #{telephone, jdbcType=VARCHAR},
+      </if>
+      <if test="billno != null" >
+        #{billno, jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        #{discount, jdbcType=NUMERIC},
+      </if>
+      <if test="shippingstatus != null" >
+        #{shippingstatus, jdbcType=NUMERIC},
+      </if>
+      <if test="billsource != null" >
+        #{billsource, jdbcType=VARCHAR},
+      </if>
+      <if test="deliverytime != null" >
+        #{deliverytime, jdbcType=TIMESTAMP},
+      </if>
+      <if test="storeoderno != null" >
+        #{storeoderno, jdbcType=VARCHAR},
+      </if>
+      <if test="invoicestatus != null" >
+        #{invoicestatus, jdbcType=NUMERIC},
+      </if>
+      <if test="cashin != null" >
+        #{cashin, jdbcType=NUMERIC},
+      </if>
+      <if test="cashout != null" >
+        #{cashout, jdbcType=NUMERIC},
+      </if>
+      <if test="lackgoodsmoney != null" >
+        #{lackgoodsmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="refundmoney != null" >
+        #{refundmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="regoodmoney != null" >
+        #{regoodmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="retailtotalmoney != null" >
+        #{retailtotalmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="orderdiscountall != null" >
+        #{orderdiscountall, jdbcType=NUMERIC},
+      </if>
+      <if test="costtotalmoney != null" >
+        #{costtotalmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="latticeName != null" >
+        #{latticeName, jdbcType=VARCHAR},
+      </if>
+      <if test="shiftNo != null" >
+        #{shiftNo, jdbcType=VARCHAR},
+      </if>
+      <if test="spSaRetailDtlStateDO != null" >
+        #{spSaRetailDtlStateDO, jdbcType={{?? unknow type}} },
+      </if>
+      <if test="integralAmount != null" >
+        #{integralAmount, jdbcType=NUMERIC},
+      </if>
+      <if test="stallBillType != null" >
+        #{stallBillType, jdbcType=NUMERIC},
+      </if>
+      <if test="createDate != null" >
+        #{createDate, jdbcType=TIMESTAMP},
+      </if>
+      <if test="residence != null" >
+        #{residence, jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateSpSaRetailStateDO" parameterType="com.suneee.scn.sale.model.dbo.SpSaRetailStateDO" >
+  <!-- parameterType="java.util.Map" -->
+    UPDATE {{?? Target table name}}
+    <set>
+      <if test="tid != null" >
+        tid = #{tid, jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseid != null" >
+        enterpriseid = #{enterpriseid, jdbcType=NUMERIC},
+      </if>
+      <if test="billtype != null" >
+        billtype = #{billtype, jdbcType=NUMERIC},
+      </if>
+      <if test="refundtype != null" >
+        refundtype = #{refundtype, jdbcType=NUMERIC},
+      </if>
+      <if test="regoodtype != null" >
+        regoodtype = #{regoodtype, jdbcType=NUMERIC},
+      </if>
+      <if test="departmentid != null" >
+        departmentid = #{departmentid, jdbcType=NUMERIC},
+      </if>
+      <if test="customer != null" >
+        customer = #{customer, jdbcType=VARCHAR},
+      </if>
+      <if test="salesmanid != null" >
+        salesmanid = #{salesmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="salesman != null" >
+        salesman = #{salesman, jdbcType=VARCHAR},
+      </if>
+      <if test="gatherdate != null" >
+        gatherdate = #{gatherdate, jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputmanid != null" >
+        inputmanid = #{inputmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="inputmanname != null" >
+        inputmanname = #{inputmanname, jdbcType=VARCHAR},
+      </if>
+      <if test="retailmoney != null" >
+        retailmoney = #{retailmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="bookmanid != null" >
+        bookmanid = #{bookmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="bookmanname != null" >
+        bookmanname = #{bookmanname, jdbcType=VARCHAR},
+      </if>
+      <if test="rtgatherno != null" >
+        rtgatherno = #{rtgatherno, jdbcType=NUMERIC},
+      </if>
+      <if test="vipid != null" >
+        vipid = #{vipid, jdbcType=NUMERIC},
+      </if>
+      <if test="province != null" >
+        province = #{province, jdbcType=NUMERIC},
+      </if>
+      <if test="city != null" >
+        city = #{city, jdbcType=NUMERIC},
+      </if>
+      <if test="region != null" >
+        region = #{region, jdbcType=NUMERIC},
+      </if>
+      <if test="community != null" >
+        community = #{community, jdbcType=NUMERIC},
+      </if>
+      <if test="address != null" >
+        address = #{address, jdbcType=VARCHAR},
+      </if>
+      <if test="wholeaddress != null" >
+        wholeaddress = #{wholeaddress, jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        telephone = #{telephone, jdbcType=VARCHAR},
+      </if>
+      <if test="billno != null" >
+        billno = #{billno, jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        discount = #{discount, jdbcType=NUMERIC},
+      </if>
+      <if test="shippingstatus != null" >
+        shippingstatus = #{shippingstatus, jdbcType=NUMERIC},
+      </if>
+      <if test="billsource != null" >
+        billsource = #{billsource, jdbcType=VARCHAR},
+      </if>
+      <if test="deliverytime != null" >
+        deliverytime = #{deliverytime, jdbcType=TIMESTAMP},
+      </if>
+      <if test="storeoderno != null" >
+        storeoderno = #{storeoderno, jdbcType=VARCHAR},
+      </if>
+      <if test="invoicestatus != null" >
+        invoicestatus = #{invoicestatus, jdbcType=NUMERIC},
+      </if>
+      <if test="cashin != null" >
+        cashin = #{cashin, jdbcType=NUMERIC},
+      </if>
+      <if test="cashout != null" >
+        cashout = #{cashout, jdbcType=NUMERIC},
+      </if>
+      <if test="lackgoodsmoney != null" >
+        lackgoodsmoney = #{lackgoodsmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="refundmoney != null" >
+        refundmoney = #{refundmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="regoodmoney != null" >
+        regoodmoney = #{regoodmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="retailtotalmoney != null" >
+        retailtotalmoney = #{retailtotalmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="orderdiscountall != null" >
+        orderdiscountall = #{orderdiscountall, jdbcType=NUMERIC},
+      </if>
+      <if test="costtotalmoney != null" >
+        costtotalmoney = #{costtotalmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="latticeName != null" >
+        latticeName = #{latticeName, jdbcType=VARCHAR},
+      </if>
+      <if test="shiftNo != null" >
+        shiftNo = #{shiftNo, jdbcType=VARCHAR},
+      </if>
+      <if test="spSaRetailDtlStateDO != null" >
+        spSaRetailDtlStateDO = #{spSaRetailDtlStateDO, jdbcType={{?? unknow type}} },
+      </if>
+      <if test="integralAmount != null" >
+        integralAmount = #{integralAmount, jdbcType=NUMERIC},
+      </if>
+      <if test="stallBillType != null" >
+        stallBillType = #{stallBillType, jdbcType=NUMERIC},
+      </if>
+      <if test="createDate != null" >
+        createDate = #{createDate, jdbcType=TIMESTAMP},
+      </if>
+      <if test="residence != null" >
+        residence = #{residence, jdbcType=VARCHAR},
+      </if>
+    <set>
+    WHERE 1=1
+      <if test="tid != null" >
+        AND tid = #{tid, jdbcType=VARCHAR},
+      </if>
+      <if test="enterpriseid != null" >
+        AND enterpriseid = #{enterpriseid, jdbcType=NUMERIC},
+      </if>
+      <if test="billtype != null" >
+        AND billtype = #{billtype, jdbcType=NUMERIC},
+      </if>
+      <if test="refundtype != null" >
+        AND refundtype = #{refundtype, jdbcType=NUMERIC},
+      </if>
+      <if test="regoodtype != null" >
+        AND regoodtype = #{regoodtype, jdbcType=NUMERIC},
+      </if>
+      <if test="departmentid != null" >
+        AND departmentid = #{departmentid, jdbcType=NUMERIC},
+      </if>
+      <if test="customer != null" >
+        AND customer = #{customer, jdbcType=VARCHAR},
+      </if>
+      <if test="salesmanid != null" >
+        AND salesmanid = #{salesmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="salesman != null" >
+        AND salesman = #{salesman, jdbcType=VARCHAR},
+      </if>
+      <if test="gatherdate != null" >
+        AND gatherdate = #{gatherdate, jdbcType=TIMESTAMP},
+      </if>
+      <if test="inputmanid != null" >
+        AND inputmanid = #{inputmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="inputmanname != null" >
+        AND inputmanname = #{inputmanname, jdbcType=VARCHAR},
+      </if>
+      <if test="retailmoney != null" >
+        AND retailmoney = #{retailmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="bookmanid != null" >
+        AND bookmanid = #{bookmanid, jdbcType=NUMERIC},
+      </if>
+      <if test="bookmanname != null" >
+        AND bookmanname = #{bookmanname, jdbcType=VARCHAR},
+      </if>
+      <if test="rtgatherno != null" >
+        AND rtgatherno = #{rtgatherno, jdbcType=NUMERIC},
+      </if>
+      <if test="vipid != null" >
+        AND vipid = #{vipid, jdbcType=NUMERIC},
+      </if>
+      <if test="province != null" >
+        AND province = #{province, jdbcType=NUMERIC},
+      </if>
+      <if test="city != null" >
+        AND city = #{city, jdbcType=NUMERIC},
+      </if>
+      <if test="region != null" >
+        AND region = #{region, jdbcType=NUMERIC},
+      </if>
+      <if test="community != null" >
+        AND community = #{community, jdbcType=NUMERIC},
+      </if>
+      <if test="address != null" >
+        AND address = #{address, jdbcType=VARCHAR},
+      </if>
+      <if test="wholeaddress != null" >
+        AND wholeaddress = #{wholeaddress, jdbcType=VARCHAR},
+      </if>
+      <if test="telephone != null" >
+        AND telephone = #{telephone, jdbcType=VARCHAR},
+      </if>
+      <if test="billno != null" >
+        AND billno = #{billno, jdbcType=VARCHAR},
+      </if>
+      <if test="discount != null" >
+        AND discount = #{discount, jdbcType=NUMERIC},
+      </if>
+      <if test="shippingstatus != null" >
+        AND shippingstatus = #{shippingstatus, jdbcType=NUMERIC},
+      </if>
+      <if test="billsource != null" >
+        AND billsource = #{billsource, jdbcType=VARCHAR},
+      </if>
+      <if test="deliverytime != null" >
+        AND deliverytime = #{deliverytime, jdbcType=TIMESTAMP},
+      </if>
+      <if test="storeoderno != null" >
+        AND storeoderno = #{storeoderno, jdbcType=VARCHAR},
+      </if>
+      <if test="invoicestatus != null" >
+        AND invoicestatus = #{invoicestatus, jdbcType=NUMERIC},
+      </if>
+      <if test="cashin != null" >
+        AND cashin = #{cashin, jdbcType=NUMERIC},
+      </if>
+      <if test="cashout != null" >
+        AND cashout = #{cashout, jdbcType=NUMERIC},
+      </if>
+      <if test="lackgoodsmoney != null" >
+        AND lackgoodsmoney = #{lackgoodsmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="refundmoney != null" >
+        AND refundmoney = #{refundmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="regoodmoney != null" >
+        AND regoodmoney = #{regoodmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="retailtotalmoney != null" >
+        AND retailtotalmoney = #{retailtotalmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="orderdiscountall != null" >
+        AND orderdiscountall = #{orderdiscountall, jdbcType=NUMERIC},
+      </if>
+      <if test="costtotalmoney != null" >
+        AND costtotalmoney = #{costtotalmoney, jdbcType=NUMERIC},
+      </if>
+      <if test="latticeName != null" >
+        AND latticeName = #{latticeName, jdbcType=VARCHAR},
+      </if>
+      <if test="shiftNo != null" >
+        AND shiftNo = #{shiftNo, jdbcType=VARCHAR},
+      </if>
+      <if test="spSaRetailDtlStateDO != null" >
+        AND spSaRetailDtlStateDO = #{spSaRetailDtlStateDO, jdbcType={{?? unknow type}} },
+      </if>
+      <if test="integralAmount != null" >
+        AND integralAmount = #{integralAmount, jdbcType=NUMERIC},
+      </if>
+      <if test="stallBillType != null" >
+        AND stallBillType = #{stallBillType, jdbcType=NUMERIC},
+      </if>
+      <if test="createDate != null" >
+        AND createDate = #{createDate, jdbcType=TIMESTAMP},
+      </if>
+      <if test="residence != null" >
+        AND residence = #{residence, jdbcType=VARCHAR},
+      </if>
+  </update>
+
