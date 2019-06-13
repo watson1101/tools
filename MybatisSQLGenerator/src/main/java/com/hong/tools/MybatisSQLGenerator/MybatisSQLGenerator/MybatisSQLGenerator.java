@@ -30,7 +30,7 @@ public class MybatisSQLGenerator {
 
 	private static List<File> readFiles() {
 		// 读取java的bean文件，生成mapper文件
-		File file = new File("documentsTest");
+		File file = new File("documents");
 		if (!file.exists()) {
 			System.out.println("directionary of '" + file + "' in projectroot is not exists, please check!");
 			// file.mkdir();
