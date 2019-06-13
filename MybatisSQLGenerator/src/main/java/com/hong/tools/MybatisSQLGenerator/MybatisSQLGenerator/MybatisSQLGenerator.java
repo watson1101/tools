@@ -17,7 +17,7 @@ public class MybatisSQLGenerator {
 
 	}
 
-	private static void generator() {
+	public static void generator() {
 		try {
 			MybatisSQLGenerator mybatisSQLGenerator = new MybatisSQLGenerator();
 			List<File> javaFiles = MybatisSQLGenerator.readFiles();
@@ -164,7 +164,7 @@ public class MybatisSQLGenerator {
 		fw.write(separator);
 		fw.write("<!-- 请务必检查集合类型、数组类型以及将其它类作为属性的字段，按需修改 -->");
 		fw.write(separator);
-		fw.write("<!-- 另外请务必请关注{{}}和\\\"??\\\"的部分 -->");
+		fw.write("<!-- 另外请务必请关注{{}}和\"??\"的部分 -->");
 		fw.write(separator);
 		fw.write(separator);
 	}
