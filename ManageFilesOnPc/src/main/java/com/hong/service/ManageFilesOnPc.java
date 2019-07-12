@@ -1,4 +1,4 @@
-package com.hong.tool;
+package com.hong.service;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -38,15 +38,22 @@ public class ManageFilesOnPc {
 
 	}
 
+	/**
+	 * 查找制定目录下的相同文件，md5值作为判断文件相同的条件
+	 * @throws IOException
+	 */
 	private static void findSameFiles() throws IOException {
 		// TODO check input of direction
-		String path = "I:\\testDir";
+		//String path = "I:\\testDir";
+		String path = "F:\\temp";
 //		List<String> fileList = new ArrayList<>();
 //		fileList = FindSameFiles.findFiles(path);
 //		System.out.println("fileList = " + fileList);
+		// key为
 		Map<String,Map<String,String>> fileInfoMap = new HashMap<>();
 		fileInfoMap = FindSameFiles.findFiles(path);
 		System.out.println("fileInfoMap = " + fileInfoMap);
+		// 判断相同的md5
 	}
 
 }
