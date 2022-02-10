@@ -5,7 +5,7 @@
 	<groupId>com.hong.test</groupId>
 	<artifactId>Test</artifactId>
 	<properties>
-		<pgdbJdbc.version>9.4-1205-jdbc41</pgdbJdbc.version>
+		<pgdbJdbc.version>42.2.25</pgdbJdbc.version>
 
 	</properties>
 
